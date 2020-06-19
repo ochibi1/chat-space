@@ -16,7 +16,7 @@
 |------|----|-------|
 |name|string|null: false|
 ### Association
-- has_many :message
+- has_many :messages
 - has_many :users, through: :users_groups
 - has_many :users_groups
 
@@ -38,7 +38,7 @@
 |image|text||
 ### Association
 - belongs_to :user
-- belongs_to :group_id
+- belongs_to :group
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
