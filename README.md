@@ -7,7 +7,7 @@
 |email|string|null: false, unique: true|
 |password|string|null: false, unique: true|
 ### Association
-- has_many :messages, through :
+- has_many :messages
 - has_many :groups, through :users_groups
 
 ## groupsテーブル
