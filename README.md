@@ -16,8 +16,9 @@
 |------|----|-------|
 |name|string|null: false|
 ### Association
-- has_many :message_id
+- has_many :message
 - has_many :users, through: :users_groups
+- has_many :users_groups
 
 ## users_groupsテーブル
 |Column|Type|Options|
