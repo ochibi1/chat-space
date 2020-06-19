@@ -7,14 +7,15 @@
 |email|string|null: false, unique: true|
 |password|string|null: false, unique: true|
 ### Association
-- has_many :messages
-- has_many :groups
+- has_many :messages, through :
+- has_many :groups, through :users_groups
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
+### Association
+- belongs_to :message_id
 
 ## users_groupsテーブル
 |Column|Type|Options|
@@ -34,7 +35,7 @@
 |image|text||
 ### Association
 - belongs_to :user
-
+- has_many :group_id
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
