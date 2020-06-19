@@ -28,7 +28,7 @@
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|message|text|null: false|
+|message|text||
 |user_id|integer|null: false, foreign_key: ture|
 |group_id|integer|null: false, foreign_key: true|
 |image|text||
