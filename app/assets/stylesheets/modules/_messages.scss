@@ -86,8 +86,11 @@
         line-height: 40px;
         height: 40px;
         margin-top: 28px;
+        &__btn{
         text-decoration: none;
+        color: #38aef0;
         }
+      }
     }
     &__message{
       height: calc(100vh - 190px);
@@ -114,9 +117,51 @@
         }
       }
     }
-    &__message-form{
+    &__footer{
       height: 90px;
       background-color: #d2d2d2;
+      display: flex;
+      align-items: center;
+      &__form{
+        width: 100%;
+        form{
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+        }
+        .box{
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 50px;
+          width: 100%;
+          margin-left: 40px;
+        }
+        &--text-field{
+          height: 50px;
+          padding-left: 10px;
+          border: none;
+          width: 100%;
+        }
+        &--label{
+          position: absolute;
+          line-height: 50px;
+          right:10px;
+        }
+        .file{
+          display: none;
+        }
+        &--submit{
+          height: 50px;
+          background-color: #38aef0;
+          color: #fff;
+          font-size: 16px;
+          padding: 0 30px;
+          border: solid thin #38aef0;
+          margin-left: 15px;
+          margin-right: 40px;
+        }
+      }
     }
   }
 }
