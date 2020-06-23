@@ -1,0 +1,42 @@
+.main-chat
+  .main-chat__group-info
+    .main-chat__group-info__group
+      TEST
+      .main-chat__group-info__group__ul
+        Member: aaa
+    .main-chat__group-info__edit
+      = link_to "#", class: "main-chat__group-info__edit__btn"do
+        Edit
+  .main-chat__message
+    .main-chat__message__box
+      .main-chat__message__box__info
+        .main-chat__message__box__info__username
+          ao 
+        .main-chat__message__box__info__date
+          2020/06/22(Mon) 19:35:01
+      .main-chat__message__box__body
+        こんばんは！
+    .main-chat__message__box
+      .main-chat__message__box__info
+        .main-chat__message__box__info__username
+          ao 
+        .main-chat__message__box__info__date
+          2020/06/22(Mon) 19:35:01
+      .main-chat__message__box__body
+        こんばんは！
+  .main-chat__footer
+    .main-chat__footer__form
+      =form_with url: "#" do |f|
+        .box
+          =f.text_field :content, class: 'main-chat__footer__form--text-field', placeholder: "type a message"
+          =f.label :image, class: 'main-chat__footer__form--label' do
+            =icon('far', 'image')
+            =f.file_field :image, class: 'file'
+        =f.submit 'Send', class: 'main-chat__footer__form--submit'
+
+
+
+-# .box text_field_size  relative
+-#   =text_field
+-#   =icon absolute
+-# =submit
