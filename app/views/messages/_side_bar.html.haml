@@ -4,23 +4,15 @@
       .side-bar__user-name__top-items__name
         = current_user.name
       .side-bar__user-name__top-items__icons
-        = link_to "#", class: "side-bar__user-name__top-items__icons--edi-btn" do
+        = link_to new_group_path, class: "side-bar__user-name__top-items__icons--edi-btn" do
           = icon('far', 'edit')
         = link_to edit_user_path(current_user), class: "side-bar__user-name__top-items__icons--cog-btn" do
           = icon('fas', 'cog')
   .side-bar__group-list
-    .side-bar__group-list__Group
-      .side-bar__group-list__Group__group-name
-        group1
-      .side-bar__group-list__Group__new-message
-        まだメッセージはありません。
-    .side-bar__group-list__Group
-      .side-bar__group-list__Group__group-name
-        group2
-      .side-bar__group-list__Group__new-message
-        まだメッセージはありません。
-    .side-bar__group-list__Group
-      .side-bar__group-list__Group__group-name
-        group3
-      .side-bar__group-list__Group__new-message
-        まだメッセージはありません。
+    - current_user.groups.each do |group|
+      .side-bar__group-list__Group
+        = link_to '#', class: "names" do
+          .side-bar__group-list__Group__group-name
+            = group.name
+          .side-bar__group-list__Group__new-message
+            まだメッセージはありません。
