@@ -1,34 +1,20 @@
 .main-chat
   .main-chat__group-info
     .main-chat__group-info__group
-      TEST
+      = @group.name
       .main-chat__group-info__group__ul
-        Member: aaa
+        - @group.users.each do |user|
+          = user.name
     .main-chat__group-info__edit
-      = link_to "#", class: "main-chat__group-info__edit__btn"do
+      = link_to edit_group_path(@group), class: "main-chat__group-info__edit__btn" do
         Edit
   .main-chat__message
-    .main-chat__message__box
-      .main-chat__message__box__info
-        .main-chat__message__box__info__username
-          ao 
-        .main-chat__message__box__info__date
-          2020/06/22(Mon) 19:35:01
-      .main-chat__message__box__body
-        こんばんは！
-    .main-chat__message__box
-      .main-chat__message__box__info
-        .main-chat__message__box__info__username
-          ao 
-        .main-chat__message__box__info__date
-          2020/06/22(Mon) 19:35:01
-      .main-chat__message__box__body
-        こんばんは！
+    = render @messages 
   .main-chat__footer
     .main-chat__footer__form
-      =form_with url: "#" do |f|
+      =form_with model: [@group, @message], html: {class: "Form"}, local: true  do |f|
         .box
-          =f.text_field :content, class: 'main-chat__footer__form--text-field', placeholder: "type a message"
+          =f.text_field :body, class: 'main-chat__footer__form--text-field', placeholder: "type a message"
           =f.label :image, class: 'main-chat__footer__form--label' do
             =icon('far', 'image')
             =f.file_field :image, class: 'file'
