@@ -99,6 +99,7 @@
     &__message{
       height: calc(100vh - 190px);
       background-color: #fafafa;
+      overflow: scroll;
       &__box{
         padding-left: 40px;
         padding-top: 35px;

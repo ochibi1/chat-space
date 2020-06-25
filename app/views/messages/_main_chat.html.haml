@@ -1,9 +1,10 @@
 .main-chat
   .main-chat__group-info
     .main-chat__group-info__group
-      = @group
+      = @group.name
       .main-chat__group-info__group__ul
-        = @group.users
+        - @group.users.each do |user|
+          = user.name
     .main-chat__group-info__edit
       = link_to edit_group_path(@group), class: "main-chat__group-info__edit__btn" do
         Edit
