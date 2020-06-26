@@ -22,5 +22,6 @@ module ChatSpace
     # the framework and any gems in your application.
     config.i18n.default_locale = :ja
     config.time_zone = 'Tokyo'
+    ActiveSupport::Deprecation.silenced = true if Rails.version == '6.0.3.2'
   end
 end
