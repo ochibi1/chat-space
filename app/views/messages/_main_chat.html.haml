@@ -12,7 +12,7 @@
     = render @messages 
   .main-chat__footer
     .main-chat__footer__form
-      =form_with model: [@group, @message], html: {class: "Form"}, local: true  do |f|
+      =form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
         .box
           =f.text_field :body, class: 'main-chat__footer__form--text-field', placeholder: "type a message"
           =f.label :image, class: 'main-chat__footer__form--label' do
