@@ -8,7 +8,7 @@ $(function(){
   }
 
   function addNoUser(){
-    let html = `<div class="ChatMembers">
+    let html = `<div class="ChatMember">
                   <p class="ChatMember__name">ユーザーが見つかりません</p>
                 </div>`;
     $("#UserSearchResult").append(html);
@@ -51,6 +51,12 @@ $(function(){
     const userName = $(this).attr("data-user-name");
     const userId = $(this).attr("data-user-id");
     $(this).parent().remove();
+    console.log(this)
+    console.log(userName)
+
+    console.log(userId)
+
+
     addMember(userName, userId);
   });
   $(".ChatMembers").on("click", ".ChatMember__remove", function(){
