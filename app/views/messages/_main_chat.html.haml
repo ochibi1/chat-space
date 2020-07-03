@@ -2,7 +2,8 @@
   .main-chat__group-info
     .main-chat__group-info__group
       = @group.name
-      .main-chat__group-info__group__ul
+      %ul.main-chat__memberlist
+        = "Member:"
         - @group.users.each do |user|
           = user.name
     .main-chat__group-info__edit
